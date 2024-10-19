@@ -1,7 +1,7 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
-COPY scripts/docs/en/deps/ubuntu-22.04.md /userver_tmp/
-COPY scripts/docker/setup-base-ubuntu-22.04-env.sh /userver_tmp/
+COPY scripts/docs/en/deps/ubuntu-24.04.md /userver_tmp/
+COPY scripts/docker/setup-base-ubuntu-24.04-env.sh /userver_tmp/
 
 COPY scripts/grpc/requirements-3.txt                    /userver_tmp/requirements/grpc-userver.txt
 COPY scripts/chaotic/requirements.txt                   /userver_tmp/requirements/chaotic.txt
@@ -18,7 +18,7 @@ COPY scripts/docker/pip-install.sh                      /userver_tmp/
 
 RUN ( \
   cd /userver_tmp \
-  && ./setup-base-ubuntu-22.04-env.sh \
+  && ./setup-base-ubuntu-24.04-env.sh \
   && ./pip-install.sh \
   && mkdir /app \
   && cd /app \
